@@ -90,15 +90,16 @@ function About() {
       ];
 
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-8">
       <div className="col-span-1">
+        <p className='text-3xl font-semibold mb-2 dark:text-gray-400'>HI, <span className='font-medium'>I'm</span></p>
         <p className='text-purple-900 text-7xl font-bold font-serif dark:text-violet-600'>NERAT SAMUEL</p>
-        <p className='text-4xl font-serif font-thin pt-5 dark:text-gray-200'>FRONTEND DEVELOPER</p>
+        {/* <p className='text-4xl font-serif font-thin pt-5 dark:text-gray-200'>FRONTEND DEVELOPER</p> */}
 
-        {/* <div className="text-justify ">
-          <p className='text-3xl font-semibold mb-2 dark:text-gray-400'>HI,</p>
-          <p className=' text-base dark:text-gray-300'>I'm a frontend developer, with a passion for creating engaging user experiences. I am excited to bring my knowledge and experience to a team and contribute to a company's success. Welcome to my portfolio!</p>
-        </div> */}
+        <div className="text-justify ">
+          {/* <p className='text-3xl font-semibold mb-2 dark:text-gray-400'>HI,</p> */}
+          <p className=' text-base dark:text-gray-300'>I have a passion for creating engaging user experiences. I am excited to bring my knowledge and experience to a team and contribute to a company's success. Welcome to my portfolio!</p>
+        </div>
 
         <motion.button
           whileHover={{ scale: 1.1 }}
@@ -135,11 +136,11 @@ function About() {
           </div>
         ))}
       </Carousel>
-
+{/* 
       <div className="ml-40 text-justify w-[700px]">
         <p className='text-3xl font-semibold mb-2 dark:text-gray-400'>HI,</p>
         <p className=' text-base dark:text-gray-300'>I'm a frontend developer, with a passion for creating engaging user experiences. I am excited to bring my knowledge and experience to a team and contribute to a company's success. Welcome to my portfolio!</p>
-      </div>
+      </div> */}
     </div>
   );
 }
