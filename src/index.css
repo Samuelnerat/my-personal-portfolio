@@ -7,13 +7,13 @@
 }
 
 ::-webkit-scrollbar-track{
-    background:#3a033a;
+    background:#2e2b2e;
     border-radius:6px;
     margin-block: .2rem;
 
 }
 
 ::-webkit-scrollbar-thumb{
-    background:linear-gradient(rgb(101, 6, 113), rgb(160, 128, 160));
+    background:linear-gradient(rgb(30, 11, 30), rgb(113, 83, 113));
     border-radius:6px;
 }

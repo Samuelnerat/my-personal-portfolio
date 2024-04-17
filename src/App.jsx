@@ -8,6 +8,10 @@ import Socials from './components/Socials';
 import Tools from './pages/Tools/Tools';
 import Contact from './pages/Contact/Contact';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Projects from './pages/Projects/Projects';
+
 
 function App() {
   const location = useLocation(); 
@@ -28,7 +32,7 @@ function App() {
                 <Routes location={location} key={location.key}>
                   <Route path="/" element={<About />} />
                   <Route path="/tools" element={<Tools />} />
-                  {/* <Route path="projects" element={<Projects />} /> */}
+                  <Route path="projects" element={<Projects />} />
                   <Route path="contact" element={<Contact />} />
                 </Routes>
               </>
@@ -36,6 +40,8 @@ function App() {
         </div>
        
         <Footer />
+
+        <ToastContainer />
   
       </div>
     </>

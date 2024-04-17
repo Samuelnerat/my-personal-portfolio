@@ -1,8 +1,45 @@
-import React from 'react';
+import { React, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from "framer-motion";
 import resume from "../../data/Favour_Samuel_Resume.pdf";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Contact() {
+  const form = useRef();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name.length === 0 || email.length === 0 || message.length === 0) {
+      console.log('Error: One or more fields are empty.');
+      toast.error('Please you should complete all the fileds before you connect');
+    } else{
+      toast.success("Successful! I'll get back to you as soon as possible. Thank You");
+      emailjs
+      .sendForm('service_dj2jr0w', 'template_5piiqvi', form.current, {
+        publicKey: 'Kwgex_jXmTIcdTkk9',
+      })
+      .then(
+        (result) => {
+          console.log('SUCCESS!');
+          console.log(result.text);
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+    }
+    setName("");
+    setEmail('');
+    setMessage('');
+  };
+
+
+
+
   return (
     <div>
       <div className='font-bold text-6xl text-purple-900 flex justify-center items-center mb-4 dark:text-violet-700'>
@@ -36,12 +73,15 @@ function Contact() {
           </div>
         </div>
 
-        <form className="space-y-4 h-[400px] flex items-center justify-center ml-10">
+        <form ref={form} className="space-y-4 h-[400px] flex items-center justify-center ml-10" onSubmit={handleSubmit}>
           <div className="items-center justify-center place-items-center grid gap-4">
             <input
               type="text"
               placeholder="Enter your name"
               required
+              name='user_name'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="border-[#2D2929] dark:border-gray-400 border-[3px] p-5 outline-none w-[500px] text-[14px] bg-[#F2F2F2] dark:bg-gray-200"
             />
 
@@ -49,15 +89,22 @@ function Contact() {
               type="email"
               placeholder="Enter your mail"
               required
+              name='user_email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="border-[#2D2929] dark:border-gray-400 border-[3px] p-5 outline-none w-[500px] text-[14px] bg-[#F2F2F2] dark:bg-gray-200"
             />
             <textarea
               placeholder="How can I help you?"
               required
+              name='message'
+              id='message'
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="border-[#2D2929] dark:border-gray-400 border-[3px] p-4 outline-none w-[500px] h-[150px] text-[14px] bg-[#F2F2F2] dark:bg-gray-200"
             ></textarea>
 
-            <button className="items-center justify-center place-items-center grid">
+            <button className="items-center justify-center place-items-center grid" type='submit'>
               <span className="relative w-[500px] h-[60px] group  px-6 py-3 font-bold">
                 <span className="absolute inset-0 w-[490px] h-[60px] bg-purple-900 dark:bg-violet-700"></span>
                 <span className="text-white dark:text-zinc-900 text-[18px] text-center font-[700] leading-[24px] relative group-hover:opacity-85">
