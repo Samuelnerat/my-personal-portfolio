@@ -11,6 +11,12 @@ import Contact from './pages/Contact/Contact';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Projects from './pages/Projects/Projects';
+import MobileNav from './components/MobileNav';
+import MobileAbout from './pages/Home/MobileAbout';
+import MobileTools from './pages/Tools/MobileTools';
+import MobileProject from './pages/Projects/MobileProject';
+import MobileContact from './pages/Contact/MobileContact';
+import Error404 from './pages/Error404';
 
 
 function App() {
@@ -19,7 +25,7 @@ function App() {
   return (
     <>
       {/* lARGE SCREEN  */}
-      <div className='h-screen bg-stone-200 px-8 py-8 dark:bg-neutral-800'>
+      <div className='h-screen bg-stone-200 px-8 py-8 dark:bg-neutral-800 lg:block hidden'>
         <Navbar />
 
         <div className="flex items-end justify-end pt-4">
@@ -34,6 +40,7 @@ function App() {
                   <Route path="/tools" element={<Tools />} />
                   <Route path="projects" element={<Projects />} />
                   <Route path="contact" element={<Contact />} />
+                  <Route path="*" element={<Error404 />} />
                 </Routes>
               </>
           </div>
@@ -43,6 +50,19 @@ function App() {
 
         <ToastContainer />
   
+      </div>
+      {/* MOBILE SCREEN */}
+      <div className='lg:hidden block min-h-screen bg-stone-200 px-8 py-8 dark:bg-neutral-800'>
+        <MobileNav />
+        <Routes>
+          <Route path="/" element={<MobileAbout />} />
+          <Route path='/tools' element={<MobileTools />} />
+          <Route path='/projects' element={<MobileProject />} />
+          <Route path='/contact' element={<MobileContact />}/>
+          <Route path="*" element={<Error404/>} />
+        </Routes>
+        <Footer />
+        <ToastContainer />
       </div>
     </>
   );

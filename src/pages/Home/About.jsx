@@ -91,7 +91,7 @@ function About() {
 
   return (
     <div className="grid grid-cols-2 gap-8">
-      <div className="col-span-1">
+      <div className="col-span-1 mt-10">
         <p className='text-3xl font-semibold mb-2 dark:text-gray-400'>HI, <span className='font-medium'>I'm</span></p>
         <p className='text-purple-900 text-7xl font-bold font-serif dark:text-violet-600'>NERAT SAMUEL</p>
         {/* <p className='text-4xl font-serif font-thin pt-5 dark:text-gray-200'>FRONTEND DEVELOPER</p> */}
@@ -112,7 +112,7 @@ function About() {
 
       <Carousel autoplay effect="fade" dots={false}>
         {initals.map(({ id, text, data }) => (
-          <div className="col-span-1" key={id}>
+          <div className="col-span-1 mt-5" key={id}>
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
