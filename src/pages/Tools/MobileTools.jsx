@@ -10,20 +10,6 @@ import { motion } from "framer-motion";
 
 function MobileTools() {
   
-    // const container = {
-    //     hidden: {
-    //       opacity: 0,
-    //     },
-    //     visible: {
-    //       opacity: 1,
-    //       transistion: { delay: 1.5, duration: 1.5 },
-    //     },
-    //     exit: {
-    //       opacity: 0,
-    //       transistion: { ease: "easeInOut" },
-    //     },
-    //   };
-
     const data = [
         {
        id: 1,
@@ -76,37 +62,38 @@ function MobileTools() {
    ];
  
   return (
-    <div className='grid text-center justify-center  items-center mt-48'>
-        <p className='text-4xl font-semibold pb-2 dark:text-gray-400 leading-[50px]'>Technologies i work with</p>
-        <p className="text-[20px] leading-[35px] dark:text-gray-300 word-break mt-[24px] w-[550px] whitespace-no-wrap">
-        Here are some of the tools i've worked with over the years, for my personal and professional projects.
-        </p>
-      <div>
-        <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="mt-3 bg-purple-900 dark:bg-violet-600 text-white dark:text-zinc-900 py-3 px-6 rounded-lg border-none text-lg font-bold cursor-pointer"
-          ><div><a href={resume} target="_blank"  rel="noopener noreferrer">View Resumé</a></div>
-        </motion.button>
-
-          <div className="flex justify-center items-center mt-[40px]">
-              <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-[24px] space-y-3">
-                {data.map(({ id, icon, text, color }) => (         
-                <li key={id} className="w-[163px] h-[77px] mt-3 bg-white dark:bg-gray-400 flex justify-center items-center ">
-                    <span className="flex gap-[16px] w-[101px] justify-evenly">
-                        <span className="w-[35px] h-[35px]">
-                            {React.cloneElement(icon, { color: color, size: 24 })}
-                        </span>
-                        <p className="flex justify-center items-center text-[14px] text-black dark:text-white leading-[19px]">
-                            {text}
-                        </p>
-                    </span>
-                </li>
-                ))}
-              </ul>
-          </div>
-      </div>
-
+    <div className='flex flex-col justify-center items-center h-full overflow-hidden'>
+        <div className='text-center'>
+            <p className='text-4xl font-semibold pb-2 dark:text-gray-400 leading-[50px]'>Technologies I work with</p>
+            <p className="text-[20px] leading-[35px] dark:text-gray-300 word-break mt-[24px] max-w-[550px] whitespace-normal">
+                Here are some of the tools I've worked with over the years, for my personal and professional projects.
+            </p>
+            <div>
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="mt-3 bg-purple-900 dark:bg-violet-600 text-white dark:text-zinc-900 py-3 px-6 rounded-lg border-none text-lg font-bold cursor-pointer"
+                >
+                    <a href={resume} target="_blank" rel="noopener noreferrer">View Resumé</a>
+                </motion.button>
+                <div className="flex justify-center items-center mt-12">
+                    <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-[24px] space-y-3">
+                        {data.map(({ id, icon, text, color }) => (         
+                            <li key={id} className="w-[163px] h-[77px] mt-3 bg-white dark:bg-gray-400 flex justify-center items-center ">
+                                <span className="flex gap-[16px] w-[101px] justify-evenly">
+                                    <span className="w-[35px] h-[35px]">
+                                        {React.cloneElement(icon, { color: color, size: 24 })}
+                                    </span>
+                                    <p className="flex justify-center items-center text-[14px] text-black dark:text-white leading-[19px]">
+                                        {text}
+                                    </p>
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
   );
 }

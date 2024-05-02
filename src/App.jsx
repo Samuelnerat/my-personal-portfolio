@@ -63,6 +63,9 @@ function App() {
         </Routes>
         <Footer />
         <ToastContainer />
+        {/* <div className="flex items-end justify-end pt-4">
+          <Socials />
+        </div> */}
       </div>
     </>
   );
