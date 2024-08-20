@@ -8,6 +8,17 @@ function MobileProject() {
     const data = [
         {
             id: 1,
+            img: "https://res.cloudinary.com/du1fj63cs/image/upload/v1724144662/Screenshot_from_2024-08-20_10-02-51_pbopvk.png",
+            title: "Password Generator",
+            subtitle: "Tool to help create and store passwords",
+            stack: "HTML, CSS, JS",
+            codeLink: "https://github.com/Samuelnerat/Random-Password-Generator",
+            viewURL: "https://samuelnerat.github.io/Random-Password-Generator/",
+            viewSite: "View Link",
+            code: "Code",
+        },
+        {
+            id: 2,
             img: "https://res.cloudinary.com/du1fj63cs/image/upload/v1724057518/ECommere_APP_dohurj.png",
             title: "Nerat's Store",
             subtitle: "An Ecommerce Website",
@@ -18,7 +29,7 @@ function MobileProject() {
             code: "Code",
         },
         {
-            id: 2,
+            id: 3,
             img: "https://res.cloudinary.com/du1fj63cs/image/upload/v1713272625/landing_page_ftr44m.png",
             title: "Portfolio",
             subtitle: "My website. Know me better",
