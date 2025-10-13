@@ -37,7 +37,7 @@ function App() {
               <>
                 <Routes location={location} key={location.key}>
                   <Route path="/" element={<About />} />
-                  <Route path="/tools" element={<Tools />} />
+                  <Route path="tools" element={<Tools />} />
                   <Route path="projects" element={<Projects />} />
                   <Route path="contact" element={<Contact />} />
                   <Route path="*" element={<Error404 />} />
@@ -56,9 +56,9 @@ function App() {
         <MobileNav />
         <Routes>
           <Route path="/" element={<MobileAbout />} />
-          <Route path='/tools' element={<MobileTools />} />
-          <Route path='/projects' element={<MobileProject />} />
-          <Route path='/contact' element={<MobileContact />}/>
+          <Route path='tools' element={<MobileTools />} />
+          <Route path='projects' element={<MobileProject />} />
+          <Route path='contact' element={<MobileContact />}/>
           <Route path="*" element={<Error404/>} />
         </Routes>
         <Footer />
